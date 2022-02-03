@@ -12,20 +12,35 @@ public class Spiral {
 
         while (scount>=0){
             for(int i=0; i<col; i++){
-                b[count]= a[a.length][col];
+                b[count]= a[a.length-row][col];
                 count++;
             }
             scount--;
             row--;
 
             for(int j=0; j<row; j++){
-                b[count] = a[row][a[0].length];
+                b[count] = a[row][a[0].length-col];
+                count++;
+            }
+            scount--;
+            col--;
+
+            for(int k=col; k>0; k--){
+                b[count]= a[a.length-row][col];
+                count++;
+            }
+            scount--;
+            row--;
+
+            for(int l=row; l>0; l--){
+                b[count] = a[row][a[0].length-col];
                 count++;
             }
             scount--;
             col--;
         }
         return b;
+
     }
 
 
